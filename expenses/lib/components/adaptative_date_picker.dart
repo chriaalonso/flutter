@@ -1,13 +1,9 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:io';
 import 'package:intl/intl.dart';
 
 class AdaptativeDatePicker extends StatelessWidget {
-  // const AdaptativeDatePicker({super.key});
-
   final DateTime? selectedDate;
   final Function(DateTime)? onDateChanged;
 
@@ -48,11 +44,11 @@ class AdaptativeDatePicker extends StatelessWidget {
         : SizedBox(
             height: 70,
             child: Row(
-              children: [
+              children: <Widget>[
                 Text(
                   selectedDate == null
-                      ? 'Nenhuma data selecionada'
-                      : 'Data selecionada: ${DateFormat('dd/MM/y').format(selectedDate!)}',
+                      ? 'Nenhuma data selecionada!'
+                      : 'Data Selecionada: ${DateFormat('dd/MM/y').format(selectedDate!)}',
                 ),
                 TextButton(
                   child: const Text(
@@ -62,7 +58,7 @@ class AdaptativeDatePicker extends StatelessWidget {
                     ),
                   ),
                   onPressed: () => _showDatePicker(context),
-                ),
+                )
               ],
             ),
           );

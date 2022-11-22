@@ -1,12 +1,8 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:io';
 
 class AdaptativeTextField extends StatelessWidget {
-  // const AdaptativeTextField({super.key});
-
   final String? label;
   final TextEditingController? controller;
   final TextInputType keyboardType;

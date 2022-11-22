@@ -1,13 +1,9 @@
-import 'package:expenses/models/transactions.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
-import 'chart_bar.dart';
 import 'package:intl/intl.dart';
+import '../models/transaction.dart';
+import 'chart_bar.dart';
 
 class Chart extends StatelessWidget {
-  // const Chart({super.key});
-
   final List<Transaction> recentTransaction;
 
   const Chart(this.recentTransaction, {Key? key}) : super(key: key);

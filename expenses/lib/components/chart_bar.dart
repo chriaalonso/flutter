@@ -1,10 +1,6 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 
 class ChartBar extends StatelessWidget {
-  // const ChartBar({super.key});
-
   final String? label;
   final double? value;
   final double? percentage;
@@ -13,7 +9,8 @@ class ChartBar extends StatelessWidget {
     this.label,
     this.value,
     this.percentage,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +18,10 @@ class ChartBar extends StatelessWidget {
       builder: (ctx, constraints) {
         return Column(
           children: [
-            Container(
+            SizedBox(
               height: constraints.maxHeight * 0.15,
               child: FittedBox(
-                child: Text('${value!.toStringAsFixed(2)}'),
+                child: Text(value!.toStringAsFixed(2)),
               ),
             ),
             SizedBox(height: constraints.maxHeight * 0.05),
@@ -33,14 +30,14 @@ class ChartBar extends StatelessWidget {
               width: 10,
               child: Stack(
                 alignment: Alignment.bottomCenter,
-                children: [
+                children: <Widget>[
                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: Colors.grey,
                         width: 1.0,
                       ),
-                      color: const Color.fromRGBO(220, 220, 200, 1),
+                      color: const Color.fromRGBO(220, 220, 220, 1),
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
@@ -57,7 +54,7 @@ class ChartBar extends StatelessWidget {
               ),
             ),
             SizedBox(height: constraints.maxHeight * 0.05),
-            Container(
+            SizedBox(
               height: constraints.maxHeight * 0.15,
               child: FittedBox(
                 child: Text(label!),

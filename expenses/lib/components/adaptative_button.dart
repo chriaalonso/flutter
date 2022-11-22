@@ -1,20 +1,16 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AdaptativeButon extends StatelessWidget {
-  // const AdaptativeButon({super.key});
-
+class AdaptativeButton extends StatelessWidget {
   final String label;
   final Function() onPressed;
 
-  AdaptativeButon(
+  const AdaptativeButton(
     this.label,
     this.onPressed, {
-      Key? key,
-    }) : super(key: key);
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +31,6 @@ class AdaptativeButon extends StatelessWidget {
               ),
             ),
             onPressed: onPressed,
-        );
+          );
   }
 }
